@@ -9,7 +9,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero_pattern: "url('/public/subtle-prism.svg')",
+        bg1: "url('/src/assets/bg1.jpg')",
+        hero_pattern: "url('/src/assets/bg2.jpg')",
       },
     },
   },

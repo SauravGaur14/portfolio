@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Header from "../components/Header";
+// import bg1 from "../assets/bg1.jpg";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
             From Wireframes to Webpages, I Shape Digital Dreams – Front-End
             Developer and UX/UI Maestro.
           </p>
-          <Button text="About Me" />
+          <Button text="About Me" to="about" />
         </div>
       </main>
     </div>
