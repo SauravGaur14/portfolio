@@ -13,6 +13,7 @@ export default function SkillSet() {
   return (
     <>
       <Skill skill="React Js" src={reactJs} />
+      <Skill skill="React Native" src={reactJs} />
       <Skill skill="Javascript" src={js} />
       <Skill skill="HTML" src={html} />
       <Skill skill="CSS" src={css} />

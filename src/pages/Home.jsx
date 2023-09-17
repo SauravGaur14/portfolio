@@ -1,6 +1,5 @@
 import Button from "../components/Button";
 import Header from "../components/Header";
-// import bg1 from "../assets/bg1.jpg";
 
 export default function Home() {
   return (
@@ -9,8 +8,8 @@ export default function Home() {
       <main>
         <div className="flex-grow-1 mt-32 flex h-max flex-col items-center gap-10 ">
           <p className="text-5xl font-extrabold">Hey, 👋 I'm SAURAV GAUR</p>
-          <p className="text-3xl font-normal">
-            I'm a Front Developer and a UX | UI Designer
+          <p className="text-3xl font-medium">
+            A Front Developer and a UX|UI Designer
           </p>
           <p className="text-2xl font-normal">
             From Wireframes to Webpages, I Shape Digital Dreams – Front-End
