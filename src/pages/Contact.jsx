@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+
 import { Form } from "react-router-dom";
 
 import Input from "../components/Input";
@@ -55,7 +57,7 @@ export default function Contact() {
                 <img src={Linkedin} alt="" className="h-10 w-10" />
               </a>
               <a href={GithubUrl} target="blank">
-                <img src={Github} className="h-9 w-9" alt="" />
+                <img src={Github} className="h-9 w-9" alt="Github" />
               </a>
             </div>
           </div>
