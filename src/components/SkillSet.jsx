@@ -1,27 +1,56 @@
+import { db } from "../firebase.js";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
+import { useEffect, useState } from "react";
+
 import Skill from "./Skill";
-import reactJs from "../assets/reactJs.png";
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import adobeXd from "../assets/adobeXd.png";
-import js from "../assets/js.png";
-import tailwind from "../assets/tailwind.png";
-import figma from "../assets/figma.png";
-import git from "../assets/git.png";
-import github from "../assets/github.png";
+import Loading from "./Loading.jsx";
 
 export default function SkillSet() {
+  const [skills, setSkills] = useState([]);
+  const [isLoadingSkills, setIsLoadingSkills] = useState([]);
+
+  const storage = getStorage();
+
+  useEffect(() => {
+    async function getData() {
+      setIsLoadingSkills(true);
+      try {
+        const q = query(collection(db, "skills"), orderBy("priority", "desc"));
+        const querySnapshot = await getDocs(q);
+        const skillsData = [];
+
+        for (const doc of querySnapshot.docs) {
+          const data = doc.data();
+          const imgRef = ref(storage, data.image);
+          const imgUrl = await getDownloadURL(imgRef);
+
+          skillsData.push({
+            id: doc.id,
+            name: data.name,
+            description: data.description,
+            image: imgUrl,
+          });
+        }
+
+        setSkills(skillsData);
+        setIsLoadingSkills(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
+    getData();
+  }, [storage]);
+
+  if (isLoadingSkills) return <Loading />;
+
   return (
-    <>
-      <Skill skill="React Js" src={reactJs} />
-      <Skill skill="React Native" src={reactJs} />
-      <Skill skill="Javascript" src={js} />
-      <Skill skill="HTML" src={html} />
-      <Skill skill="CSS" src={css} />
-      <Skill skill="Tailwind" src={tailwind} />
-      <Skill skill="Adobe XD" src={adobeXd} />
-      <Skill skill="Figma" src={figma} />
-      <Skill skill="Git" src={git} />
-      <Skill skill="Github" src={github} />
-    </>
+    <div className="flex flex-wrap items-center justify-center gap-10 sm:p-10">
+      {skills.map((skill) => (
+        <Skill key={skill.id} skill={skill.name} src={skill.image} />
+      ))}
+    </div>
   );
 }

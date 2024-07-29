@@ -4,7 +4,7 @@ export default function Button({ text, to }) {
   return (
     <NavLink
       to={to}
-      className="h-16 w-64 rounded-xl bg-violet-700 pt-3 text-center font-sourceSans text-3xl font-medium text-white hover:scale-105 hover:bg-violet-600 hover:tracking-wide duration-100"
+      className="h-16 w-64 items-center justify-center rounded-xl bg-violet-700 p-3 text-center font-alegreya text-3xl font-medium tracking-wide text-white duration-100 hover:scale-105 hover:bg-violet-600"
     >
       {text}
     </NavLink>

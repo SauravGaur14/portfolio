@@ -3,17 +3,20 @@ import Header from "../components/Header";
 
 export default function Home() {
   return (
-    <div className="h-screen bg-hero_pattern bg-cover font-sans">
+    <div className="h-screen w-screen overflow-x-hidden bg-red-100 bg-cover font-alegreya md:bg-hero_pattern">
       <Header />
-      <main>
-        <div className="flex-grow-1 mt-32 flex h-max flex-col items-center gap-10 ">
-          <p className="text-5xl font-extrabold">Hey, 👋 I'm SAURAV GAUR</p>
-          <p className="text-3xl font-medium">
-            A Front Developer and a UX|UI Designer
+      <main className="w-full p-5">
+        <div className="animateBottomToTop mt-32 flex h-max w-full flex-grow flex-col items-center justify-center">
+          <p className="mb-14 text-center text-5xl font-extrabold">
+            Hey, <span className="shakeEmoji">👋</span> I'm Saurav Gaur
           </p>
-          <p className="text-2xl font-normal">
-            From Wireframes to Webpages, I Shape Digital Dreams – Front-End
-            Developer and UX/UI Maestro.
+          <p className="linearGradient mb-4 bg-clip-text text-center  text-4xl font-semibold text-slate-700 text-transparent">
+            A Full Stack Developer and a UX|UI Designer
+          </p>
+
+          <p className="animateLeftToRight mb-14 text-center text-2xl font-medium text-slate-500">
+            "Designing with precision and Developing with passion, turning
+            wireframes to reality"
           </p>
           <Button text="About Me" to="about" />
         </div>

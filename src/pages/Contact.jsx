@@ -1,61 +1,47 @@
-import { Form, NavLink } from "react-router-dom";
-import { ReactComponent as Facebook } from "../assets/facebook.svg";
-import { ReactComponent as Linkedin } from "../assets/linkedin.svg";
-import { ReactComponent as Twitter } from "../assets/twitter.svg";
+import { Form } from "react-router-dom";
+
+import Input from "../components/Input";
 import Header from "../components/Header";
+import Button from "../components/Button";
+
+import Github from "../assets/github.svg";
+import Linkedin from "../assets/linkedin.svg";
+
+import { GithubUrl, LinkedUrl } from "../util/constants";
 
 export default function Contact() {
+  function sendMsgHandler(e) {
+    e.preventDefault();
+    alert("Get in touch on Linkedin");
+  }
   return (
-    <div className="bg-hero_pattern">
+    <div className="bg-red-100 md:bg-hero_pattern">
       <Header />
-      <div className="h-screen pl-10 pt-5">
-        <h1 className="mt-1 text-3xl font-bold">Get in touch 👋</h1>
+      <div className="animateBottomToTop min-h-screen px-8 pb-10">
+        <h1 className="mt-6 text-3xl font-bold">Get in touch 👋</h1>
         <h3 className="mt-2 text-xl font-medium">
-          Have Queries or Suggestions ? I'd love hearing from you!{" "}
+          Have Queries or Suggestions ? I'd love hearing from you!
         </h3>
 
-        <div className="flex flex-wrap items-center gap-x-28">
-          <Form className="mt-10 flex h-[27rem] w-1/2 flex-col gap-y-4 rounded-2xl bg-gray-200 pl-10">
-            <div className="mt-8 flex flex-col">
-              <label htmlFor="name" className="text-lg font-bold">
-                Name
-              </label>
-              <input
-                type="text"
-                placeholder="John Doe"
-                className="h-10 w-80 rounded-3xl bg-gray-50 pl-4 outline-none ring-gray-500 focus:ring-1"
-                id="name"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="emial" className="text-lg font-bold">
-                Email
-              </label>
-              <input
-                type="email"
-                placeholder="john@gmail.com"
-                className="h-10 w-80 rounded-3xl bg-gray-50 pl-4 outline-none ring-gray-500 focus:ring-1"
-                id="email"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="message" className="text-lg font-bold">
-                Message
-              </label>
-              <textarea
-                type="text"
-                placeholder="Hii there !"
-                className="h-28 w-80 resize-none overflow-hidden break-words rounded-2xl bg-gray-50 pl-4 pt-3 text-base leading-normal outline-none ring-gray-500 focus:ring-1"
-                id="message"
-              />
-            </div>
-            <div className="self-end pr-10">
-              <button
-                type="submit"
-                className="h-12 w-44 self-end rounded-xl bg-violet-700 text-center font-sourceSans text-2xl font-semibold text-white duration-100 hover:scale-105  hover:bg-violet-600"
-              >
+        <div className="mt-10 flex w-full flex-col flex-wrap items-center justify-between gap-y-10 md:flex-row">
+          <Form className="flex w-full flex-col gap-y-8 rounded-2xl border-2 border-gray-400 p-8 md:w-1/2">
+            <Input id="name" type="text" label="Name" placeholder="John Doe" />
+            <Input
+              id="email"
+              type="email"
+              label="Email"
+              placeholder="john@gmail.com"
+            />
+            <Input
+              id="message"
+              type="text"
+              label="Message"
+              placeholder="Hello"
+            />
+            <div onClick={sendMsgHandler} className="self-center">
+              <Button text="Say Hii👋" type="submit">
                 Say Hii👋
-              </button>
+              </Button>
             </div>
           </Form>
 
@@ -64,16 +50,13 @@ export default function Contact() {
             <p className="mb-1 mt-3 text-xl font-medium">
               Find me on these online spaces too
             </p>
-            <div className="flex h-11 gap-x-7">
-              <NavLink to="https://www.linkedin.com" target="blank">
-                <Linkedin className="h-10 w-10" />
-              </NavLink>
-              <NavLink to="https://www.facebook.com" target="blank">
-                <Facebook className="h-10 w-10" />
-              </NavLink>
-              <NavLink to="https://www.twitter.com" target="blank">
-                <Twitter className="h-11 w-11" />
-              </NavLink>
+            <div className="flex h-11 items-baseline gap-x-7">
+              <a href={LinkedUrl} target="blank">
+                <img src={Linkedin} alt="" className="h-10 w-10" />
+              </a>
+              <a href={GithubUrl} target="blank">
+                <img src={Github} className="h-9 w-9" alt="" />
+              </a>
             </div>
           </div>
         </div>

@@ -2,6 +2,14 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 /* Styling for the custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -14,26 +22,42 @@
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;
-  /* border: 1px solid transparent;
-  background-clip: content-box; */
-  height: 20px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-  background: #f1f1f1;
+.linearGradient{
+ background-image:  linear-gradient(90deg, #7209d4, #2832d4 33%, #00a5b2);
 }
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.animateBottomToTop{
+  animation: bottomToTop 1.3s cubic-bezier(0, 0.91, 0, 0.91)  ;
+}
+.animateLeftToRight{
+  animation: leftToRight 1.4s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+@keyframes bottomToTop{
+  0%{
+    transform: translateY(100%);
+    opacity: 50%;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes leftToRight{
+  0%{
+    transform: translateX(-100%);
+    opacity: 10%;
+  }
+  70%{
+    transform: translateX(5%);
+  }
+  80%{
+    transform: translateX(-5%);
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
