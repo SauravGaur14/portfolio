@@ -1,12 +1,14 @@
-import { NavLink } from "react-router-dom";
-
-export default function Button({ text, to }) {
+export default function Button({ text, onClick }) {
   return (
-    <NavLink
-      to={to}
-      className="h-16 w-64 items-center justify-center rounded-xl bg-violet-700 p-3 text-center font-alegreya text-3xl font-medium tracking-wide text-white duration-100 hover:scale-105 hover:bg-violet-600"
+    <button
+      onClick={onClick}
+      class="cta flex items-center justify-center p-4 text-center font-alegreya font-medium"
     >
-      {text}
-    </NavLink>
+      <span className="text-button text-center text-3xl font-bold">{text}</span>
+      <svg width="25px" height="25px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </button>
   );
 }

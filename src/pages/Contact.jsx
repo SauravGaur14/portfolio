@@ -14,7 +14,7 @@ import { GithubUrl, LinkedUrl } from "../util/constants";
 export default function Contact() {
   function sendMsgHandler(e) {
     e.preventDefault();
-    alert("Get in touch on Linkedin");
+    alert("Kindly contact on Linkedin");
   }
   return (
     <div className="bg-red-100 md:bg-hero_pattern">
@@ -40,8 +40,8 @@ export default function Contact() {
               label="Message"
               placeholder="Hello"
             />
-            <div onClick={sendMsgHandler} className="self-center">
-              <Button text="Say Hii👋" type="submit">
+            <div className="self-center">
+              <Button text="Send" onClick={sendMsgHandler} type="submit">
                 Say Hii👋
               </Button>
             </div>

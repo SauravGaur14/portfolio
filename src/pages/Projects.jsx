@@ -57,7 +57,7 @@ export default function Projects() {
       <Header />
       <div className="animateBottomToTop items-center justify-center p-10">
         <p className="mb-8 mt-10 text-center font-alegreya text-4xl font-semibold">
-          Some of my recent works😉
+          Some of my recent works..😊
         </p>
         {isLoadingProjects ? (
           <Loading />

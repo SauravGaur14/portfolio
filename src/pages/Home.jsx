@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Header from "../components/Header";
 
 export default function Home() {
+  const navigate = useNavigate();
+  function clickHandler() {
+    navigate("/about");
+  }
   return (
     <div className="h-screen w-screen overflow-x-hidden bg-red-100 bg-cover font-alegreya md:bg-hero_pattern">
       <Header />
@@ -18,7 +23,7 @@ export default function Home() {
             "Designing with precision and Developing with passion, turning
             wireframes to reality"
           </p>
-          <Button text="About Me" to="about" />
+          <Button onClick={clickHandler} text="About Me" />
         </div>
       </main>
     </div>
