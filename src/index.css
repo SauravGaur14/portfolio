@@ -9,6 +9,18 @@
   box-sizing: border-box;
 }
 
+.clip-path-skew {
+clip-path: polygon(50% 0%, 100% 0, 100% 43%, 100% 100%, 49% 93%, 49% 93%, 0 100%, 0% 43%, 0 0);
+}
+
+.clip-path-skew-top{
+  clip-path: polygon(49% 3%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+.custom-word-spacing {
+  word-spacing: 0.5rem;
+}
+
 .cursor {
   pointer-events: none;
   position: fixed;

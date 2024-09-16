@@ -1,17 +1,23 @@
-import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
-import Header from "../components/Header";
 
 export default function Home() {
-  const navigate = useNavigate();
   function clickHandler() {
-    navigate("/about");
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      const headerHeight = document.getElementById("header").offsetHeight;
+      const offsetPosition = aboutSection.offsetTop - headerHeight;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", "about");
+    }
   }
+
   return (
-    <div className="h-screen w-screen overflow-x-hidden bg-red-100 bg-cover font-alegreya md:bg-hero_pattern">
-      <Header />
+    <div className="clip-path-skew min-h-screen w-full items-center justify-center overflow-x-hidden bg-red-100 py-20 font-alegreya">
       <main className="w-full p-5">
-        <div className="animateBottomToTop mt-32 flex h-max w-full flex-grow flex-col items-center justify-center">
+        <div className="animateBottomToTop flex h-max w-full flex-grow flex-col items-center justify-center">
           <p className="mb-14 text-center text-5xl font-extrabold">
             Hey, <span className="shakeEmoji">👋</span> I'm Saurav Gaur
           </p>

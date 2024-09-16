@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import SkillSet from "../components/SkillSet";
 import heroImage from "../assets/hero.webp";
 import { useRef } from "react";
@@ -10,12 +9,11 @@ export default function About() {
   }
 
   return (
-    <div className="bg-red-100">
-      <Header />
+    <div className="-mt-24 min-h-[screen] bg-fuchsia-100 sm:-mt-20">
       <div className="flex flex-col items-center overflow-hidden p-3 font-alegreya text-black">
         <div className="animateBottomToTop">
           <div className="flex justify-center">
-            <h1 className="mb-10 mt-8 text-center text-4xl font-bold sm:text-6xl">
+            <h1 className="mb-10 mt-20 text-center text-4xl font-bold sm:text-6xl">
               About me
             </h1>
           </div>
@@ -46,8 +44,8 @@ export default function About() {
           className="mb-6 flex min-h-screen w-full flex-col items-center"
           ref={skillRef}
         >
-          <h1 className="mb-12 mt-10 w-3/5 text-center text-6xl font-bold tracking-tighter">
-            My Toolkit
+          <h1 className="custom-word-spacing mb-12 mt-10 w-3/5 text-center text-6xl font-bold ">
+            My Tech Stack
           </h1>
           <div className="mb-10 flex w-full flex-wrap items-center justify-center gap-10">
             <SkillSet />

@@ -1,20 +1,37 @@
-import { NavLink } from "react-router-dom";
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
-export default function HeaderItems() {
+export default function HeaderItems({
+  onHomeClick,
+  onAboutClick,
+  onProjectsClick,
+  onContactClick,
+}) {
   return (
     <>
-      <NavLink to="/" className="hover:scale- font-medium hover:text-violet-700">
+      <a
+        onClick={onHomeClick}
+        className="font-medium cursor-pointer hover:text-violet-700"
+      >
         Home
-      </NavLink>
-      <NavLink to="/about" className="hover:scale- font-medium hover:text-violet-700">
+      </a>
+      <a
+        onClick={onAboutClick}
+        className="font-medium cursor-pointer hover:text-violet-700"
+      >
         About
-      </NavLink>
-      <NavLink to="/projects" className="hover:scale- font-medium hover:text-violet-700">
+      </a>
+      <a
+        onClick={onProjectsClick}
+        className="font-medium cursor-pointer hover:text-violet-700"
+      >
         Projects
-      </NavLink>
-      <NavLink to="/contact" className="hover:scale- font-medium hover:text-violet-700">
+      </a>
+      <a
+        onClick={onContactClick}
+        className="font-medium cursor-pointer hover:text-violet-700"
+      >
         Contact
-      </NavLink>
+      </a>
     </>
   );
 }

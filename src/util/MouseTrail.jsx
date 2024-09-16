@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-// import './MouseTrail.css'; // Include your CSS
 
 export default function MouseTrail() {
   const isMobile = window.matchMedia("(pointer: coarse)").matches;

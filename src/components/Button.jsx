@@ -2,7 +2,7 @@ export default function Button({ text, onClick }) {
   return (
     <button
       onClick={onClick}
-      class="cta flex items-center justify-center p-4 text-center font-alegreya font-medium"
+      className="cta flex items-center justify-center p-4 text-center font-alegreya font-medium"
     >
       <span className="text-button text-center text-3xl font-bold">{text}</span>
       <svg width="25px" height="25px" viewBox="0 0 13 10">

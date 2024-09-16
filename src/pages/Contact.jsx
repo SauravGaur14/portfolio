@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 
-import { Form } from "react-router-dom";
-
 import Input from "../components/Input";
-import Header from "../components/Header";
 import Button from "../components/Button";
 
 import Github from "../assets/github.svg";
@@ -17,16 +14,15 @@ export default function Contact() {
     alert("Kindly contact on Linkedin");
   }
   return (
-    <div className="bg-red-100 md:bg-hero_pattern">
-      <Header />
+    <div className="min-h-screen clip-path-skew-top bg-fuchsia-100 -mt-10 pt-20">
       <div className="animateBottomToTop min-h-screen px-8 pb-10">
-        <h1 className="mt-6 text-3xl font-bold">Get in touch 👋</h1>
+        <h1 className="text-3xl font-bold">Get in touch 👋</h1>
         <h3 className="mt-2 text-xl font-medium">
           Have Queries or Suggestions ? I'd love hearing from you!
         </h3>
 
         <div className="mt-10 flex w-full flex-col flex-wrap items-center justify-between gap-y-10 md:flex-row">
-          <Form className="flex w-full flex-col gap-y-8 rounded-2xl border-2 border-gray-400 p-8 md:w-1/2">
+          <form className="flex w-full flex-col gap-y-8 rounded-2xl border-2 border-gray-400 p-8 md:w-1/2">
             <Input id="name" type="text" label="Name" placeholder="John Doe" />
             <Input
               id="email"
@@ -45,7 +41,7 @@ export default function Contact() {
                 Say Hii👋
               </Button>
             </div>
-          </Form>
+          </form>
 
           <div>
             <h2 className="text-2xl font-semibold">Feeling Social ?😃</h2>

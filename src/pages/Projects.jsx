@@ -4,7 +4,6 @@ import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 
 import { useEffect, useState } from "react";
 
-import Header from "../components/Header";
 import Project from "../components/Project";
 import Loading from "../components/Loading.jsx";
 
@@ -53,11 +52,10 @@ export default function Projects() {
   }, [storage]);
 
   return (
-    <div className="min-h-screen w-full gap-y-11 bg-red-100">
-      <Header />
+    <div className="clip-path-skew-top min-h-screen w-full gap-y-11 -mt-24 pt-10 bg-red-100">
       <div className="animateBottomToTop items-center justify-center p-10">
-        <p className="mb-8 mt-10 text-center font-alegreya text-4xl font-semibold">
-          Some of my recent works..😊
+        <p className="m-10 text-center font-alegreya text-5xl font-semibold">
+          Some of my recent works..
         </p>
         {isLoadingProjects ? (
           <Loading />
@@ -75,11 +73,11 @@ export default function Projects() {
           </div>
         )}
       </div>
-      <div className="mt-10 w-full rounded-lg border-amber-400 hover:text-blue-700">
+      <div className="mt-10 w-full rounded-lg border-amber-400 pb-5 hover:text-blue-700">
         <a
           target="blank"
           href={GithubUrl}
-          className="flex items-center justify-center gap-x-3 p-4 text-xl"
+          className="flex items-center justify-center gap-x-3 p-4 pb-10 text-xl sm:text-2xl"
         >
           <p>Check out my Github profile for more such amazing projects...</p>
           <img src={github} width={50} alt="github" />
