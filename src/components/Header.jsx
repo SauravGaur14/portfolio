@@ -9,8 +9,11 @@ export default function Header({
   onContactClick,
 }) {
   return (
-    <header className="z-50 fixed flex h-24 w-full items-center justify-between bg-gray-100 px-6 py-1 font-alegreya shadow-2xl" id="header">
-      <Logo />
+    <header
+      className="fixed z-50 flex h-24 w-full items-center justify-between bg-gray-100 px-6 py-1 font-alegreya shadow-2xl"
+      id="header"
+    >
+      <Logo onClick={onHomeClick} />
 
       <div className="group relative text-xl">
         <div className="flex md:hidden">

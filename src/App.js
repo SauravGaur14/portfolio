@@ -41,7 +41,7 @@ function App() {
         />
       </div>
 
-      <section id="home border-b" ref={homeRef}>
+      <section id="home" ref={homeRef}>
         <Home />
       </section>
 

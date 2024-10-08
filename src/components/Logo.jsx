@@ -1,9 +1,9 @@
 import logo from "../assets/logo.svg";
 
-export default function Logo() {
+export default function Logo({ onClick }) {
   return (
-    <a href="#section">
+    <div className="cursor-pointer" onClick={onClick}>
       <img src={logo} className="h-auto w-full max-w-[200px]" alt="logo"></img>
-    </a>
+    </div>
   );
 }
