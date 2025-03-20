@@ -5,7 +5,6 @@ import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Header from "./components/Header";
 
-
 function App() {
   const [headerHeight, setHeaderHeight] = useState(0);
 
@@ -41,18 +40,18 @@ function App() {
         />
       </div>
 
-      <section id="home" ref={homeRef}>
+      <section className="min-h-screen" id="home" ref={homeRef}>
         <Home />
       </section>
 
-      <section id="about" ref={aboutRef}>
+      <section className="min-h-screen" id="about" ref={aboutRef}>
         <About />
       </section>
 
-      <section id="projects" ref={projectsRef}>
+      <section className="min-h-screen" id="projects" ref={projectsRef}>
         <Projects />
       </section>
-      <section id="contact" ref={contactRef}>
+      <section className="min-h-screen" id="contact" ref={contactRef}>
         <Contact />
       </section>
     </div>

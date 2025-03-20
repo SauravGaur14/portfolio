@@ -19,6 +19,13 @@ export default function Contact() {
   const [popupMessage1, setPopupMessage1] = useState("");
   const [popupMessage2, setPopupMessage2] = useState("");
 
+  const encode = (data) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
+      )
+      .join("&");
+
   function sendMsgHandler(e) {
     e.preventDefault();
 
@@ -40,11 +47,10 @@ export default function Contact() {
       return;
     }
 
-    const formData = new FormData(e.target);
-
     fetch("/", {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", name, email, message }),
     })
       .then(() => {
         setShowPopup(true);
@@ -73,9 +79,11 @@ export default function Contact() {
           <form
             name="contact"
             data-netlify="true"
+            netlify-honeypot="bot-field"
             onSubmit={sendMsgHandler}
             className="flex w-full flex-col gap-y-8 rounded-2xl border-2 border-gray-400 p-8 md:w-1/2"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <Input
               id="name"
               name="name"
@@ -128,7 +136,11 @@ export default function Contact() {
             <Popup
               message1={popupMessage1}
               message2={popupMessage2}
-              onClick={() => setShowPopup(false)}
+              onClick={() => {
+                setShowPopup(false);
+                setPopupMessage1("");
+                setPopupMessage2("");
+              }}
             />
           )}
         </div>
